@@ -1,0 +1,6 @@
+<div id="best-articles-box" style="border: 2px solid grey">
+	<h2>To nejlepsi z naseho blogu:</h2>
+	{foreach $articles as $article}
+	<a href="{plink Homepage:article $article['id']}">{$article['title']}</a><br>
+	{/foreach}
+</div>

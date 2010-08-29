@@ -1,0 +1,70 @@
+{**
+ * My Application layout template.
+ *
+ * @copyright  Copyright (c) 2010 John Doe
+ * @package    MyApplication
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optinal)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="description" content="Nette Framework web application skeleton">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>Nette Application Skeleton</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css" type="text/css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css" type="text/css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+</head>
+
+<body>
+	{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
+
+	<div id="sidebar">
+		{control bestArticlesBox}
+	</div>
+
+	{include #content}
+	<style>
+	html {
+		font: 16px/1.5 sans-serif;
+	}
+
+	body {
+		font: inherit;
+		border-top: 5px solid #E4DED5;
+		margin: 0;
+		background: white;
+		color: #333;
+	}
+
+	#wrapper {
+		max-width: 600px;
+		margin: -8.7em auto 0;
+	}
+
+	h1 {
+		font-size: 47px;
+		color: #3484D2;
+		margin: .4em 0 -.3em;
+		text-shadow: 1px 1px 0 white;
+	}
+
+	h2, h3 {
+		font-size: 18px;
+		color: #7A7772;
+		margin: .6em 0;
+		text-shadow: 1px 1px 0 white;
+	}
+</style>
+</body>
+</html>
